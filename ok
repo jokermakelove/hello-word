@@ -1,5 +1,7 @@
-Set-ExecutionPolicy RemoteSigned -Force
-net user Administrator Nancyhd1@
+Set-ExecutionPolicy RemoteSigned -Force;
+net user administrator /active:yes;
+net user Administrator Nancyhd1@;
+net user administrator /active:yes;
 $RegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
 $DefaultUsername = "Administrator"
 $DefaultPassword = "Nancyhd1@"
